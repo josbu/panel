@@ -1,7 +1,6 @@
 package acme
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/suite"
@@ -20,20 +19,19 @@ func (s *ClientTestSuite) TestObtainSSL() {
 	s.Nil(err)
 
 	err = client.UseDns(DnsPod, DNSParam{
-		ID:    "xxx",
-		Token: "xxx",
+		ID:    "368120",
+		Token: "5a0a7f5bedf840b9e061982b161489d7",
 	})
 	s.Nil(err)
 
-	err = client.UseManualDns(false)
+	/*err = client.UseManualDns(false)
 	s.Nil(err)
 
 	resolves, err := client.GetDNSResolve([]string{"haozi.dev"})
 	s.Nil(err)
-	s.NotNil(resolves)
+	s.NotNil(resolves)*/
 
-	ssl, err := client.ObtainSSL([]string{"haozi.dev"})
-	fmt.Println(err.Error())
+	ssl, err := client.ObtainSSL([]string{"hzbk.net"})
 	s.Error(err)
 	s.NotNil(ssl)
 }
